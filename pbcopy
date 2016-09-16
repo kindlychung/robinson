@@ -1,0 +1,45 @@
+   Compiling rustcallc v0.1.0 (file:///Users/kaiyin/Documents/workspace-eclipse-neon/rustcallc)
+error[E0369]: binary operation `+` cannot be applied to type `<T as std::ops::Rem>::Output`
+  --> src/main.rs:24:9
+   |
+24 |         (*self % n) + n
+   |         ^^^^^^^^^^^
+   |
+note: an implementation of `std::ops::Add` might be missing for `<T as std::ops::Rem>::Output`
+  --> src/main.rs:24:9
+   |
+24 |         (*self % n) + n
+   |         ^^^^^^^^^^^
+
+error[E0308]: mismatched types
+  --> src/main.rs:45:31
+   |
+45 |         Mod::new(self.modulo, self.i + other.i)
+   |                               ^^^^^^^^^^^^^^^^ expected type parameter, found associated type
+   |
+   = note: expected type `T`
+   = note:    found type `<T as std::ops::Add>::Output`
+
+error[E0308]: mismatched types
+  --> src/main.rs:54:31
+   |
+54 |         Mod::new(self.modulo, self.i - other.i)
+   |                               ^^^^^^^^^^^^^^^^ expected type parameter, found associated type
+   |
+   = note: expected type `T`
+   = note:    found type `<T as std::ops::Sub>::Output`
+
+error[E0308]: mismatched types
+  --> src/main.rs:63:31
+   |
+63 |         Mod::new(self.modulo, self.i * other.i)
+   |                               ^^^^^^^^^^^^^^^^ expected type parameter, found associated type
+   |
+   = note: expected type `T`
+   = note:    found type `<T as std::ops::Mul>::Output`
+
+error: aborting due to 4 previous errors
+
+error: Could not compile `rustcallc`.
+
+To learn more, run the command again with --verbose.
